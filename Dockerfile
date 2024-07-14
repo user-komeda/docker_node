@@ -9,4 +9,4 @@ RUN tar -xf "node-v$NODE_VERSION.tar.xz"
 RUN cd "node-v$NODE_VERSION" && ./configure && make -j$(getconf _NPROCESSORS_ONLN) && make install
 RUN npm install -g corepack
 RUN corepack enable yarn
-RUN yarn -v
+RUN yarn set version stable -f
