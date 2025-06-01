@@ -8,4 +8,4 @@ RUN  ls
 RUN tar -xf "node-v$NODE_VERSION.tar.xz"
 RUN curl -OL https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip && unzip ninja-linux && unzip && mv ninja /usr/bin
 RUN cd "node-v$NODE_VERSION" && ./configure --ninja && make && make install
-RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && microdnf install yarn
+RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo && rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg && microdnf install -y  yarn
