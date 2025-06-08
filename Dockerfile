@@ -3,7 +3,7 @@ FROM almalinux:minimal
 ENV NODE_VERSION=20.15.0
 
 WORKDIR /temp_build
-RUN microdnf -y install tar make gcc xz python3 unzip  g++ && microdnf clean cache
+RUN microdnf -y install tar make gcc xz python3 unzip  g++ && microdnf clean all
 # Install packages needed to build gems 
 RUN curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"
 RUN tar -xf "node-v$NODE_VERSION.tar.xz"
